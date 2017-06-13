@@ -1,0 +1,10 @@
+[Unit]
+Description=Boot Sound
+After=alsa-restore.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/startupsound
+
+[Install]
+WantedBy=multi-user.target

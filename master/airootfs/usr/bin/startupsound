@@ -1,0 +1,3 @@
+#!/bin/sh
+amixer sset Master unmute
+aplay /var/local/startup.wav

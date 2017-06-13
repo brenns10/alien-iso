@@ -1,0 +1,8 @@
+#!/bin/bash
+
+files=(/var/local/alien-sfx/*.mp3)
+while :
+do
+	sleep $[ ( $RANDOM % 60 ) + 30 ]s
+	mpg123 "${files[RANDOM % ${#files[@]}]}"
+done

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while :
+do
+	mpg123 /var/local/ambient.mp3
+done

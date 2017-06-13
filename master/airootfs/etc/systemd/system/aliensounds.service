@@ -1,0 +1,10 @@
+[Unit]
+Description=Random Alien Sounds
+After=startupsound.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/aliensounds
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Runs the ISO in a VM for testing. *very poor performance, nearly unusable*
+
+qemu-system-x86_64 -boot d -cdrom profile/out/*.iso -m 512 -soundhw hda -vga vmware

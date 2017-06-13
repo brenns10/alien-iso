@@ -1,0 +1,1 @@
+exec cool-retro-term --fullscreen -p Nostromo2

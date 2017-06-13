@@ -1,0 +1,10 @@
+[Unit]
+Description=Ambient Sounds
+After=startupsound.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ambientsound
+
+[Install]
+WantedBy=multi-user.target
