@@ -22,8 +22,8 @@ Build your own
 It should be possible to build yourself, provided that you have a computer
 running Arch Linux.
 
-1. Your system must be prepared to install AUR packages (i.e. install
-   `base-devel`). You must also have sudo configured.
+1. You should have `base-devel` and `archiso` installed. Also, you should have
+   sudo configured.
 2. Run `./mkalieniso`. You will be prompted by sudo for your password.
 3. ISO is located in `profile/out`
 4. You can clean things up with `sudo rm -rf aur customrepo profile`
