@@ -20,16 +20,16 @@ Build your own
 --------------
 
 It should be possible to build yourself, provided that you have a computer
-running Arch Linux. A few steps you need to take first:
+running Arch Linux.
 
-1. Build two packages from the AUR: `plymouth-theme-nostromo` and
-   `alien-console`
-2. Create a "[custom repo][]" (very easy) containing these two packages.
-3. Edit the `master/pacman.conf` file of this repository. In the `customrepo`
-   section, change `Server` to be the file path to your custom repo.
+1. Your system must be prepared to install AUR packages (i.e. install
+   `base-devel`). You must also have sudo configured.
+2. Run `./mkalieniso`. You will be prompted by sudo for your password.
+3. ISO is located in `profile/out`
+4. You can clean things up with `sudo rm -rf aur customrepo profile`
 
-Then, use the command `./mkalieniso` to build the iso. You'll find the output in
-`profile/out/`. It may take a little while!
+Each time you run the script, a full rebuild is triggered (except for building
+AUR packages). This is difficult to avoid. Pull requests welcome :)
 
 Customize
 ---------

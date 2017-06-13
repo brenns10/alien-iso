@@ -1,20 +1,41 @@
 #!/bin/bash
 # mkalieniso - makes an Alien themed iso
 
+set -e
+
 RELENG_PROFILE=master
 LOCAL_PROFILE=profile
 
-if [[ $EUID -ne 0 ]]; then
-	echo This script must be run as root.
-	exit 1
+# This function builds an AUR package, assuming it is in a work directory
+aur_build () {
+	cd aur
+	git clone aur@aur.archlinux.org:$1.git
+	cd $1
+	pwd
+	makepkg -df
+	mv *.pkg.tar* ../../customrepo/x86_64
+	cd ../..
+}
+
+# First, build some AUR packages and create our custom repo
+if [ ! -d "customrepo" ]; then
+	echo Building AUR packages and constructing a custom repo.
+	mkdir -p aur customrepo/x86_64
+	aur_build plymouth-git
+	aur_build plymouth-theme-nostromo
+	aur_build alien-console
+	repo-add customrepo/x86_64/customrepo.db.tar customrepo/x86_64/*.pkg.tar*
 fi
 
-rm -rf $LOCAL_PROFILE
+# Now, make a copy of the profile files we have in master/
+sudo rm -rf $LOCAL_PROFILE
 mkdir $LOCAL_PROFILE
 cp -r $RELENG_PROFILE/* $LOCAL_PROFILE
+sed 's#TICKLE ME#file:///'$(pwd)'/customrepo/\$arch#' \
+	< master/pacman.conf \
+	> profile/pacman.conf
 
-# CUSTOMIZATIONS HERE?
-
+# Now, build!
 cd $LOCAL_PROFILE
 mkdir out
-./build.sh -v
+sudo ./build.sh -v
