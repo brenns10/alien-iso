@@ -63,3 +63,4 @@ make a bash alias which points to `alien-console path/to/config.conf`.
 [my website]: #TODO
 [custom repo]: https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository
 [archiso]: https://wiki.archlinux.org/index.php/archiso
+[alien-console repo]: https://github.com/brenns10/alien-console
