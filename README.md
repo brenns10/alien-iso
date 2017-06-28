@@ -60,7 +60,20 @@ default one installed in `/usr/share/alien-console`.
 You can also include any configuration file anywhere in the filesystem, and then
 make a bash alias which points to `alien-console path/to/config.conf`.
 
-[my website]: #TODO
+Dependencies
+------------
+
+Check out [alien-console](https://github.com/brenns10/alien-console), which was
+made for this.
+
+Screenshots
+-----------
+
+![Boot screen](screenshots/01-boot.png)
+![Console splash screen](screenshots/02-splash.png)
+![Console main screen](screenshots/03-main.png)
+
+[my website]: https://brennan.io/2017/06/14/alien-computer-card/
 [custom repo]: https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository
 [archiso]: https://wiki.archlinux.org/index.php/archiso
 [alien-console repo]: https://github.com/brenns10/alien-console
